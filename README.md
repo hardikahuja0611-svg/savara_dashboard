@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SAVRA | Principal's Analytics Dashboard
 
-## Getting Started
+A specialized monitoring tool built for school administrators to track teacher engagement, lesson consistency, and activity trends.
 
-First, run the development server:
+## 🚀 Live Demo
+https://savara-dashboard.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧠 System Thinking & Problem Solving
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The core of this challenge was not just displaying data, but ensuring its integrity. I implemented a custom **Insights Engine** to handle the following:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 1. Data Deduplication (The "Hidden Twist")
+Real-world educational data often contains overlaps. My engine uses a composite key strategy:
+- It creates a unique signature for every activity based on `teacher_id`, `activity_type`, and `timestamp`.
+- It filters out 100% identical entries before they reach the UI, ensuring the Principal sees accurate totals.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Analytical Aggregation
+Instead of just listing rows, the system categorizes data into three key metrics:
+- **Lessons**: Content delivery tracking.
+- **Quizzes**: Assessment frequency.
+- **Assessments**: Student evaluation volume.
 
-## Learn More
+### 3. Automated Insights
+I added a logic layer that compares Lesson volume vs. Quiz volume. It provides a dynamic recommendation to the administrator on whether to focus more on instruction or evaluation.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS (for a clean, professional "SaaS" look)
+- **Charts**: Recharts (for responsive activity trends)
+- **Language**: JavaScript (ES6+)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Installation & Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/hardikahuja0611-svg/savara_dashboard.git
